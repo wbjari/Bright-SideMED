@@ -2,8 +2,6 @@
 
 function matchUpdate()
 {
-
-
 	return $result;
 }
 

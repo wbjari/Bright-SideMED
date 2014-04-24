@@ -1,9 +1,5 @@
-
 // uitvoeren realTime functie
 realTime();
-
-
-
 
 function realTime() {
     setInterval(function() {
@@ -29,8 +25,6 @@ $('#streaming').click(function(){
     location.href='livestream.html';
 });
 
-
-
 $(document).ajaxStart(function() {
     $('#loading').show()
 });
@@ -38,4 +32,3 @@ $(document).ajaxStart(function() {
 $(document).ajaxStop(function() {
     $('#loading').hide()
 });
-
