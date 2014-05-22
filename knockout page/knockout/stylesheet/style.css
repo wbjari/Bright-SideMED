@@ -1,0 +1,72 @@
+*
+margin: 0px;
+padding: 0px;
+
+.wrapper{
+}
+
+.upperblock{
+	height:200px;
+	width:auto;
+}
+
+.cup{
+	position:absolute;
+	margin-left:515px;
+	margin-top:80px;
+}
+
+/* Dit zijn de blokken waar de formulieren in positioneerd staan */
+
+.quarter-finals-left{
+	height:400px;
+	width:260px;
+	float:left;
+}
+
+.semi-finals-left{
+	height:400px;
+	width:220px;
+	float:left;
+}
+
+.finals{
+	height:400px;
+	width: 350px;
+	float:left;
+}
+
+.semi-finals-right{
+	height:400px;
+	width:220px;
+	float:left;
+}
+
+.quarter-finals-right{
+	height:400px;
+	width:260px;
+	float:left;
+}
+
+/* Dit is zijn formulier velden op de knockout.php */
+
+.finale-form {
+	margin-top:220px;
+	margin-left:28px;
+}
+
+.halve-links-form{
+	margin-top:145px;
+}
+
+.halve-rechts-form{
+	margin-top:145px;
+}
+
+.kwart-links-form{
+	margin-top:90px;
+}
+
+.kwart-rechts-form{
+	margin-top:90px;
+}
