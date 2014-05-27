@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Databank: `fifadev`
+-- Databank: `daniel_fifadb`
 --
-CREATE DATABASE IF NOT EXISTS `fifadev` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `fifadev`;
+CREATE DATABASE IF NOT EXISTS `daniel_fifadb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `daniel_fifadb`;
 
 -- --------------------------------------------------------
 
