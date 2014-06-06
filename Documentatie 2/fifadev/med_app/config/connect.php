@@ -8,5 +8,5 @@ $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 echo 'error: ' . $e->getMessage();
 */
 
-$con = mysqli_connect('http://mysql1095.servage.net', 'svenluijten', 'svenluijten1', 'svenluijten') or die('Error :' . mysqli_error($con));
+$con = mysqli_connect('localhost', 'root', '', 'fifadev') or die('Error :' . mysqli_error($con));
 ?>

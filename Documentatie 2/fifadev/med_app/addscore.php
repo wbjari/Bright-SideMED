@@ -70,6 +70,10 @@ function getPlayers($con) {
 			box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 0 16px rgba(0,0,0,0.1);						
 			background: rgba(255,255,255,0.8);
 		}
+
+		input[type="number"] {
+   	width:80px;
+}
 		
 
 
@@ -78,6 +82,13 @@ function getPlayers($con) {
 <body>
 <div class="container">
 	<div class="page-header">
+		<?php
+
+			if(isset($_GET['msg'])) {
+				echo "<span>" . $_GET['msg'] . "</span>";
+			}
+
+		?>
 		<h1>Score toevoegen</h1>
 		<h2 class="text-center"> <?php echo nowPlaying($con); ?> </h2>
 		<a href="selectwedstrijd.php"><button class="btn btn-default">Wedstrijd selecteren</button></a>
@@ -89,6 +100,8 @@ function getPlayers($con) {
 		$sql2 = "SELECT * FROM poulewedstrijden WHERE wedstrijdnr = '$id'";
 		$query = mysqli_query($con, $sql2);
 		$row = mysqli_fetch_assoc($query);
+		$query2	 = mysqli_query($con, "SELECT naam AS teamnaam, spelers.voornaam AS voornaam, spelers.id as spelerid, spelers.doelpunten AS doelpunten FROM teams JOIN spelers ON spelers.team_id = teams.id");
+
 	?>
 	<div class="score col-md-8">
 	    <form role="form" action="__addScore.php?id=<?php echo $id?>" METHOD="POST">
@@ -126,6 +139,22 @@ function getPlayers($con) {
                 <table class="table">
                     <tbody class="nowplaying">
                       
+                    </tbody>
+                </table>
+  	</div>
+  	<div class="col-md-4">
+  		<h2>Voeg doelpunten in:</h2>
+                <table class="table">
+                    <tbody class="doelpunten">
+                    	
+                      <?php while($data = mysqli_fetch_assoc($query2)) {
+                      echo '<form method="POST" action="updateTopscorer.php">';
+                      echo $data['teamnaam'] . " " . $data['voornaam'] . "<input type='number' id='doelpunten' name='doelpunten' size='2' value='" . $data['doelpunten'] . "'><input type='hidden' id='spelerid' name='spelerid' value='" . $data['spelerid'] ."'><input type='submit' value='update'>";
+                      echo "<br>";
+                      echo  '</form>';
+                  }
+                      ?>
+                
                     </tbody>
                 </table>
   	</div>
